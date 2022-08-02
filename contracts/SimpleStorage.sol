@@ -20,6 +20,23 @@ function retrieve() public view returns(uint256)
 //     return favoriteNumber;
 // }
 
+// ****Structure*****
+
+struct People {
+    uint256 favoriteNumber_;
+    string name;
+}
+
+// People public person = People({favoriteNumber_: 2, name: 'Huzaifa'});
+
+
+// ******Array********
+
+// declaring an array
+     uint256[] public favoriteNumber;   // Declaring a unit as an array
+     People[] public person;   // Declaring a structure as an array....
+
+
 
 
 }
