@@ -28,21 +28,41 @@ struct People {
 }
 
 // People public person = People({favoriteNumber_: 2, name: 'Huzaifa'});
+// People public person2 = People({favoriteNumber_: 22, name: 'Huzaifa2'});
+
+// Storing the data of different like this would be a very difficult and hectic way and not clean code, hence we introduce a datastructure called array
 
 
 // ******Array********
 
 // declaring an array
-     uint256[] public favoriteNumber;   // Declaring a unit as an array
-     People[] public person;   // Declaring a structure as an array....
+    //  uint256[] public favoriteNumber;   // Declaring a unit as an array
+     People[] public people;   // Declaring a structure as an array....
+
+    // This is a dynamically declared array, we can also have an array which is declared in a static way like we usually do in other languages.
 
 
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public{
+      
+    // Way-1
+    // people.push(People(_favoriteNumber, _name));
+
+    // Way-2
+    // People memory newPerson = People({favoriteNumber_: _favoriteNumber, name: _name});
+    // people.push(newPerson);
+
+    // Way-3
+    People memory newPerson = People(_favoriteNumber, _name);
+    people.push(newPerson);
+
+
+    }
 
 
 }
 
 //  0xd9145CCE52D386f254917e481eB44e9943F39138
-
 
 
 
