@@ -68,12 +68,13 @@ struct People {
         nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 
+    // EVM - Ethureum Virtual machine
+    // Avalanche, polygon, and fantom are EVM compatible blockchains.
+
 
 }
 
 //  0xd9145CCE52D386f254917e481eB44e9943F39138
-
-
 
 
 
