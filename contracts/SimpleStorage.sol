@@ -43,7 +43,7 @@ struct People {
 
 
 
-    function addPerson(string memory _name, uint256 _favoriteNumber) public{
+    // function addPerson(string memory _name, uint256 _favoriteNumber) public{
       
     // Way-1
     // people.push(People(_favoriteNumber, _name));
@@ -53,16 +53,27 @@ struct People {
     // people.push(newPerson);
 
     // Way-3
-    People memory newPerson = People(_favoriteNumber, _name);
-    people.push(newPerson);
+    // People memory newPerson = People(_favoriteNumber, _name);
+    // people.push(newPerson);
 
 
+    // }
+
+    // *******Mapping*********
+
+    mapping(string => uint256) public nameToFavoriteNumber;
+
+    function addPerson( string memory _name, uint256 _favoriteNumber) public{
+        people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 
 
 }
 
 //  0xd9145CCE52D386f254917e481eB44e9943F39138
+
+
 
 
 
