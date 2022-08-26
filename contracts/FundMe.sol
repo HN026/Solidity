@@ -26,7 +26,7 @@ contract FundMe{
 
     uint256 public minimumUsd = 50 * 1e18;
 
-    address[] public payable;
+    address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
 
@@ -38,13 +38,19 @@ contract FundMe{
         // Above, msg.value get considered to be the first parameter hence we don't need to put the value in brackets
 
         funders.push(msg.sender);
-        addressToAmountFunded[msg.sender] = msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
      }
 
 
 
 
-    //  function Withdraw(){}
+     function Withdraw() public{
+         for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++)
+         {
+             address funder = funders[funderIndex];
+             addressToAmountFunded[funder] = 0;
+         }
+     }
 
 
 
