@@ -50,9 +50,40 @@ contract FundMe{
              address funder = funders[funderIndex];
              addressToAmountFunded[funder] = 0;
          }
+
+
+     // Resetting an Array: 
+     funders = new address[](0):
+     // The line above means a brand new array of addresses with zero elements in it to
+     // begin with.
+
+     
+      // Withdrawing the funds from this contract, i.e sending eth from this contract.
+
+      // There are three different ways: 
+    // 1. transfer
+    // 2. Send 
+    // 3. call
+
+     
+    //  msg.sender = address 
+    // payable(msg.sender) = payable address
+    // In solidity, to send a native blockchain token like ethureum, we need to work with
+    // payable addresses
+
+    // Here the this keyword means the whole contract.
+    // Method-1: Transfer
+
+    payable(msg.sender).transfer(address(this).balance);
+
+    // Method-2 Send
+
+    bool sendSuccess = payable(msg.sender).send(address(this).balance);
+    require(sendSuccess, "Send failed");
+
+    // Method-3 Call
+
+    // 4:45
+
+
      }
-
-
-
-
-}
